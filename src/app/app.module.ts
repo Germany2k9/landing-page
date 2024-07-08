@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ContactComponent } from './contact/contact.component';
-import { ProductDetaliComponent } from './product-detali/product-detali.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
@@ -15,7 +14,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     HomeComponent,
     ProductsComponent,
     ContactComponent,
-    ProductDetaliComponent,
+   
     ProductDetailComponent
   ],
   imports: [
