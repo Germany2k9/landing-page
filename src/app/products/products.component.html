@@ -14,24 +14,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Disco Externo </td>
-        <td>$10</td>
-        <button type="button" class="btn btn-outline-primary" [routerLink]="['/products', 'red', 'disco-externo']">Detalle</button>
+      <tr *ngFor="let product of productList">
+        <th scope="row">{{product.id}}</th>
+        <td>{{product.name}} </td>
+        <td>{{product.price | currency}}</td>
+        <button type="button" class="btn btn-outline-primary" [routerLink]="['/products', 'disco-externo']">Detalle</button>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Teclado</td>
-        <td>$5</td>
-        <button type="button" class="btn btn-outline-primary" [routerLink]="['/products', 'yellow', 'teclado']">Detalle</button>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Mouse</td>
-        <td>$8</td>
-        <button type="button" class="btn btn-outline-primary" [routerLink]="['/products', 'green', 'mouse']">Detalle</button>
-      </tr>
+      
     </tbody>
   </table>
 </div>

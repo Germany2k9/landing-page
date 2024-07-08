@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductDetailComponent implements OnInit {
 
     producto: string = '';
-    color: string = '';
+   
 
 
   constructor(private _route: ActivatedRoute){}
@@ -17,7 +17,7 @@ export class ProductDetailComponent implements OnInit {
     ngOnInit(): void {
       this._route.params.subscribe(params => {
         this.producto = params['productId'];
-        this.color = params['category'];
+        
       });
     
   } 
