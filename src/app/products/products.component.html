@@ -17,8 +17,8 @@
       <tr *ngFor="let product of productList">
         <th scope="row">{{product.id}}</th>
         <td>{{product.name}} </td>
-        <td>{{product.price | currency}}</td>
-        <button type="button" class="btn btn-outline-primary" [routerLink]="['/products', 'disco-externo']">Detalle</button>
+        <td [ngClass]="{'red-color':product.price > 15}">{{product.price | currency}}</td>
+        <button type="button" class="btn btn-outline-primary" [routerLink]="['/products', product.id]">Detalle</button>
       </tr>
       
     </tbody>
