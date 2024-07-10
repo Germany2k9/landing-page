@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class ContactComponent {
 
+  public usuario: any= {
+    nombre:'',
+    email:''
+  }
+
+  enviar(){
+    console.log(this.usuario);
+  }
 }
