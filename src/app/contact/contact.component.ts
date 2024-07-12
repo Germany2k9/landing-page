@@ -9,7 +9,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ContactComponent implements OnInit{
 
   formularioContacto: FormGroup
-  tipoDni:string ='DNI' 
+  tipoDni:string =''
+   mostrarDNI: boolean = false
 
   // usuarioActivo: any ={
   //   nombre:'Pedro',
@@ -23,7 +24,6 @@ export class ContactComponent implements OnInit{
       nombre:['', [Validators.required, Validators.minLength(3)]],
       // xample  apellido: [''], 
       apellido:['', [Validators.required, Validators.minLength(3)]], 
-      DNI:[''], 
       tipoDni:[''], 
         email: ['', [Validators.required, Validators.email]]
       
@@ -55,10 +55,18 @@ export class ContactComponent implements OnInit{
     //   this.formularioContacto.get('DNI')?.disable()
 
     //SUSCRIPCIONES
-    this.formularioContacto.get('tipoDni')?.valueChanges. subscribe(value =>{
+
+    this.formularioContacto.get('nombre')?.setValue('Juan')
+    this.formularioContacto.get('nombre')?.disable()
+    this.formularioContacto.get('tipoDni')?.valueChanges.subscribe(value =>{
+      this.mostrarDNI = value != ''
        this.tipoDni= value    
       })
   }
+
+    ngOnDestroy(): void{
+      console.log('Se destruyo el componente anterior')
+    }
 
   hasErrors( controlName: string, errorType: string){
     return this.formularioContacto.get(controlName)?.hasError(errorType) && this.formularioContacto.get(controlName)?.touched
@@ -68,6 +76,5 @@ export class ContactComponent implements OnInit{
   enviar(){
     console.log(this.formularioContacto)
   }
- 
     
 }

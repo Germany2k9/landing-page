@@ -17,6 +17,7 @@
       </div>
       
       <div class="mb-3">
+
       <label for="tipoDni" class="form-label">Tipo de DNI:</label>
       <select class="form-select" id="tipoDni" formControlName="tipoDni">
         <option value="DNI">DNI</option>
@@ -25,12 +26,9 @@
       </select>
       </div>
 
-      <div class="mb-3">
-        <label for="name" class="form-label">{{tipoDni}}</label>
-        <input [ngClass] = "{'is-invalid': hasErrors('DNI', 'required') || hasErrors ('DNI', 'minlength')}" 
-         type="text" class="form-control" id="name" formControlName="DNI"> 
-        <div class="text-danger"*ngIf="hasErrors('DNI', 'required')"> {{tipoDni}} Requerido.</div>
-        <div class="text-danger"*ngIf="hasErrors('DNI', 'minlength')"> {{tipoDni}} requiere minimo 3 caracteres.</div>
+      <div class="mb-3" *ngIf="mostrarDNI">
+        <dni-input [tipoDni]="tipoDni"/>
+        
       </div>
 
     <div class="mb-3">
