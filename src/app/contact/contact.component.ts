@@ -31,7 +31,7 @@ export class ContactComponent implements OnInit{
   }
   
   ngOnInit(): void {
-    //Tambien podemos  setear validadores por fuera del constructor EJM
+    //Tambien podemos setear validadores por fuera del constructor EJM
     //this.formularioContacto.get('apellido')?.setValidators([Validators.required, Validators.minLength(3)]); 
     //DEPENDIENDO EL TIPO DE PANTALLA QUE TENES UN CAMPO ES OBLIGATORIO O NO ES OBLIGATORIO
 
